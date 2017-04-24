@@ -1,0 +1,4 @@
+include *.rst
+recursive-include djangocms_geoplaceholder/locale *
+recursive-include djangocms_geoplaceholder/migrations *
+recursive-include djangocms_geoplaceholder/templates *

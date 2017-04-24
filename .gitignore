@@ -1,0 +1,10 @@
+*.pyc
+*.egg-info
+build
+dist
+MANIFEST
+tests/mydatabase
+*.egg
+.eggs
+.hg
+.hgignore
