@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django import forms
 from django.utils.translation import ugettext as _
 
-from ipware.ip import get_ip
 from django_geoip.models import City, Region, Country
 
 from .models import GeoPlaceholderModel
 
+
 class GeoPlaceholderForm(forms.ModelForm):
     country = forms.ModelChoiceField(label=GeoPlaceholderModel._meta.get_field('country').verbose_name.title(),
-        queryset=Country.objects.order_by('name'), required=False)
+                                     queryset=Country.objects.order_by('name'), required=False)
     region = forms.ModelChoiceField(label=GeoPlaceholderModel._meta.get_field('region').verbose_name.title(),
-        queryset=Region.objects.order_by('name'), required=False)
+                                    queryset=Region.objects.order_by('name'), required=False)
     city = forms.ModelChoiceField(label=GeoPlaceholderModel._meta.get_field('city').verbose_name.title(),
-        queryset=City.objects.order_by('name'), required=False)
+                                  queryset=City.objects.order_by('name'), required=False)
 
     class Meta:
         model = GeoPlaceholderModel

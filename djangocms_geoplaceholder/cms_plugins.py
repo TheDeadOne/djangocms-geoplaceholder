@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.utils.translation import ugettext as _
 
 from cms.plugin_base import CMSPluginBase
@@ -9,6 +11,8 @@ from django_geoip.models import IpRange
 from .models import GeoPlaceholderModel
 from .forms import GeoPlaceholderForm
 
+
+@plugin_pool.register_plugin
 class GeoPlaceholderPublisher(CMSPluginBase):
     model = GeoPlaceholderModel
     form = GeoPlaceholderForm
@@ -40,6 +44,3 @@ class GeoPlaceholderPublisher(CMSPluginBase):
 
         context.update({'geo_placeholder_render': geo_placeholder_render})
         return context
-
-
-plugin_pool.register_plugin(GeoPlaceholderPublisher)

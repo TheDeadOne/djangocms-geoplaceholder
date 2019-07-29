@@ -1,0 +1,4 @@
+[flake8]
+exclude = __pycache__,.hg,env,env2,env3,*migrations*,static,media,dist
+max-line-length = 119
+import-order-style = google

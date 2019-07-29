@@ -1,0 +1,2 @@
+[bandit]
+exclude: .hg,env,env2,env3
